@@ -1,0 +1,218 @@
+
+.container{
+    width: 100vw;
+    height: 120vh;
+    background-color: rgba(94, 94, 94, 0.6);
+    position: fixed;
+    z-index: 999;
+    top: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    padding: 10px 50px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* this is to postition the close button to top right corner */
+    position: relative;
+}
+
+.close{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    cursor: pointer;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+.itemTitle{
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+.titleLabel{
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.titleInput{
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+
+.wrapper h1{
+    margin-left: 110px;
+}
+
+.wrapper h3{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.question input{
+    width: 380px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.label{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input{
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+
+.optionContainer{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.optionInput{
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    max-width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.correctAnswersBlock{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.correctAnswersBlock p{
+    font-size: 15px;
+}
+
+.answersTag{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 10px;
+}
+
+.difficultyTag{
+    display: flex;
+    justify-content: space-between;
+}
+
+.questionAddBtn{
+    margin-top: 10px;
+    margin-left: 170px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.questionAddBtn:hover{
+    background-color: brown;
+    color: white;
+}
+
+.quizSubmitBtn{
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.quizSubmitBtn:hover{
+    border: 2px solid teal;
+    background-color: white;
+}
+
+.priceContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputSmall{
+    width: 25%;
+}
+
+.extra{
+    display: flex;
+    justify-content: space-between;
+}
+
+.extraItems{
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.extraItem{
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid tomato;
+    color: tomato;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.extraButton{
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.extraButton:hover{
+    background-color: rgb(0, 77, 0);
+}
+
+.addButton{
+    width: 25%;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 0;
+    align-self:center;
+}
+
+.addButton:hover{
+    background-color: rgb(0, 93, 93);
+}

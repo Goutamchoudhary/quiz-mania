@@ -1,0 +1,47 @@
+.container{
+    height: 65px;
+    padding: 0px 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(0, 60, 255);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.titleLogo{
+    font-size: 30px;
+}
+
+.item{
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.item button{
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.item li{
+    color: black;
+    padding: 5px;
+    margin: 2px;
+}
+
+.list{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.list:hover{
+    border: 1px solid rgb(0, 60, 255);
+}
