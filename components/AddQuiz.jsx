@@ -23,8 +23,8 @@ const AddQuiz = ({setClose}) => {
         }
     }
 
-    const handleSubmitQuestion = async(e) => {
-        e.preventDefault();
+    const handleSubmitQuestion = async() => {
+        
         try{
             const answerOptions = [option1, option2, option3, option4];
             const newQuestion = {
@@ -39,8 +39,8 @@ const AddQuiz = ({setClose}) => {
         }
     }
 
-    const handleSubmitQuiz = async(e) => {
-        e.preventDefault();
+    const handleSubmitQuiz = async() => {
+        
         try{
             const newQuiz = {title};
 

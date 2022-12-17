@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const quizSchema = new mongoose.Schema(
     {
         title:{type:String, required:true},
-        questionsList: {type: Array}
+        questionsList: {type: [string], required:true}
         
     }, {timestamps:true  
 })

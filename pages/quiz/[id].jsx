@@ -6,16 +6,16 @@ import { useState } from 'react';
 import axios from "axios";
 
 const Quiz = ({quiz}) => {
-    const [isQuizStarted, etIsQuizStarted] = useState(false);
-    
+    const [isQuizStarted, setIsQuizStarted] = useState(false);
+
 
     return (
         <>
             <div className={styles.quiz-container}>
-                {quizStarted ? (
-                    <QuizScreen retry={() => setIsQuizStarted(false)}/>
+                {isQuizStarted ? (
+                    <QuizScreen quiz={quiz} retry={() => setIsQuizStarted(false)}/>
                 ) : (
-                    <JoinScreen start={() => setIsQuizStarted(true)}/>
+                    <JoinScreen quiz={quiz} start={() => setIsQuizStarted(true)}/>
                 )}
             </div>
     
@@ -23,15 +23,15 @@ const Quiz = ({quiz}) => {
     )
 }
 
-// export const getServerSideProps = async ({params}) => {
+export const getServerSideProps = async ({params}) => {
     
-//     const res = await axios.get(`${process.env.SERVER}/api/quiz/${params.id}`);
+    const res = await axios.get(`${process.env.SERVER}/api/quiz/${params.id}`);
 
-//     return {
-//         props:{
-//             quiz: res.data,
-//         },
-//     };
-// }
+    return {
+        props:{
+            quiz: res.data,
+        },
+    };
+}
 
 export default Quiz

@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from '../styles/QuizCard.module.css';
 
 const QuizCard = () => {
+//take quiz as props
 
     return (
         // <Link href={`/quiz/${quiz._id}`} passHref>

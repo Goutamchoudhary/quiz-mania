@@ -1,0 +1,14 @@
+.quiz-container{
+    height: 380px;
+    width: 700px;
+    margin-top: 90px;
+    margin-left: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid gray;
+    border-radius: 20px;
+    position: relative;
+}
+

@@ -21,28 +21,28 @@ const handler =  async (req, res) => {
         }        
     }
 
-    if(method === "PUT"){
-        if(!token || token !== process.env.TOKEN){
-            return res.status(401).json("Not Authenticated");
-        }
-        try{
-            const product = await Order.findByIdAndUpdate(id, req.body, {new:true});
-            res.status(200).json(product);
-        }catch(err){
-            res.status(500).json(err);
-        }
-    }
-    if(method === "DELETE"){
-        if(!token || token !== process.env.TOKEN){
-            return res.status(401).json("Not Authenticated");
-        }
-        try{
-            await Product.findByIdAndDelete(id);
-            res.status(20).json("The product has been deleted!");
-        }catch(err){
-            res.status(500).json(err);
-        }
-    }
+    // if(method === "PUT"){
+    //     if(!token || token !== process.env.TOKEN){
+    //         return res.status(401).json("Not Authenticated");
+    //     }
+    //     try{
+    //         const product = await Order.findByIdAndUpdate(id, req.body, {new:true});
+    //         res.status(200).json(product);
+    //     }catch(err){
+    //         res.status(500).json(err);
+    //     }
+    // }
+    // if(method === "DELETE"){
+    //     if(!token || token !== process.env.TOKEN){
+    //         return res.status(401).json("Not Authenticated");
+    //     }
+    //     try{
+    //         await Product.findByIdAndDelete(id);
+    //         res.status(20).json("The product has been deleted!");
+    //     }catch(err){
+    //         res.status(500).json(err);
+    //     }
+    // }
 };  
 
 export default handler;
