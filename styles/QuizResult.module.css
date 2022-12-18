@@ -1,0 +1,42 @@
+.resultContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.resultContainer p {
+    font-size: 20px;
+}
+
+.retryButton{
+    font-size: 22px;
+    padding: 5px 15px;
+    cursor: pointer;
+    border: 1px solid #0070f3;
+    border-radius: 10px;
+    margin: 10px 15px;
+}
+
+.homeButton{
+    font-size: 22px;
+    padding: 5px 15px;
+    cursor: pointer;
+    border: 1px solid #0070f3;
+    border-radius: 10px;
+    margin: 10px 15px;
+}
+
+.homeButton:hover,
+.homeButton:focus,
+.homeButton:active {
+    color: white;
+    background-color: #0070f3;
+}
+
+.retryButton:hover,
+.retryButton:focus,
+.retryButton:active {
+    color: white;
+    background-color: #0070f3;
+}

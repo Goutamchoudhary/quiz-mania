@@ -1,12 +1,12 @@
 import React from 'react'
-import styles from '../../styles/quiz.module.css';
+import styles from '../styles/JoinScreen.module.css';
 
 const JoinScreen = ({start}) => {
     return (
-        <div className={styles.join-screen}>
-            <h2>Join Quiz</h2>
-            <h4>Click on Start!</h4>
-            <button onClick={start}>Start</button>
+        <div className={styles.joinScreen}>
+            <h1>Join Quiz</h1>
+            <h3>Click on Start!</h3>
+            <button onClick={start} className={styles.startButton}>Start</button>
         </div>
     )
 }

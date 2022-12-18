@@ -7,7 +7,6 @@ import PanelPage from './PanelPage';
 
 const Home = () => {
     const cookieuser = parseCookies();
-    console.log(cookieuser);
     
     const user =  cookieuser ? cookieuser.userEmail : "";
     return (

@@ -15,7 +15,7 @@
 .titleLogo{
     position: absolute;
     top: 0;
-    right: 42%;
+    right: 41%;
     font-size: 35px;
     margin-bottom: 50px;
 }
@@ -23,7 +23,7 @@
 .form{
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 90px;
 }
 
 .input{
@@ -40,7 +40,7 @@
     padding-left: 0px;
     background-color:white;
     color: black;
-    margin-left: 160px;
+    margin-left: 165px;
     margin-top: 7px;
     height: 35px;
     width: 100px;

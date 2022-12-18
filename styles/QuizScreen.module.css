@@ -1,0 +1,39 @@
+.QuizScreen{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+}
+
+.questionContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+}
+
+.questionNumberDifficulty{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mcqOption{
+    display: flex;
+    align-items: center;
+}
+
+.submitQuestion{
+    font-size: 22px;
+    padding: 5px 15px;
+    cursor: pointer;
+    border: 1px solid #0070f3;
+    border-radius: 10px;
+}
+
+.submitQuestion:hover,
+.submitQuestion:focus,
+.submitQuestion:active {
+    color: white;
+    background-color: #0070f3;
+}

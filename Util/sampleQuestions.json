@@ -1,28 +1,77 @@
 [
-    {
-        "title":"'OS' computer abbreviation usually means ?",
-        "options":["Order of Significance", "Open Software", "Operating System", "None of these"],
-        "correctOptionIndex":"2"
+    {   
+        "quizName": "General Quiz",
+        "question":"'OS' computer abbreviation usually means ?",
+        "answerOptions":["Order of Significance", "Open Software", "Operating System", "None of these"],
+        "correctAnswers":["Operating System"],
+        "difficulty": 1
     },
     {
-        "title":"Most modern TV's draw power even if turned off. The circuit the power is used in does",
-        "options":["Sound", "Remote control", "Color balance", "High voltage"],
-        "correctOptionIndex":"1"
+        "quizName": "General Quiz",
+        "question":"Which of the following options is correct with regard to HTML?",
+        "answerOptions":["It is a modelling language", "It is a scripting language", "It is a partial programming language", "It is used to structure documents"],
+        "correctAnswers":["It is used to structure documents"],
+        "difficulty": 2
     },
     {
-        "title":"Which motor is NOT suitable for use as a DC machine?",
-        "options":["Permanent magnet motor", "Series motor", "Squirrel cage motor", "Synchronous motor"],
-        "correctOptionIndex":"2"
+        "quizName": "General Quiz",
+        "question":"How can you make a list that lists the items with numbers?",
+        "answerOptions":["<ul>", "<list>", "<ol>", "<dl>"],
+        "correctAnswers":["<ol>"],
+        "difficulty": 3
     },
     {
-        "title":"'.INI' extension refers usually to what kind of file?",
-        "options":["Image file", "System file", "Hypertext related file", "None of these"],
-        "correctOptionIndex":"1"
+        "quizName": "General Quiz",
+        "question":"All HTML comment tags are enclosed in what ?",
+        "answerOptions":["<>", "<? and ?>", "# and #", "<!-- and -->"],
+        "correctAnswers":["<!-- and -->"],
+        "difficulty": 4
     },
     {
-        "title":"Which consists of two plates separated by a dielectric and can store a charge?",
-        "options":["Capacitor", "Inductor", "Transistor", "Relay"],
-        "correctOptionIndex":"0"
+        "quizName": "General Quiz",
+        "question": "What type of framework is Next.js?",
+        "answerOptions": ["Frontend", "Backend", "FullStack", "None of the above" ],
+        "correctAnswers":["FullStack"],
+        "difficulty": 5
+    },
+    {
+        "quizName": "General Quiz",
+        "question": "Which tag is used to write the javascript code",
+        "answerOptions": ["<script>", "<sp>", "<javascript>", "<java>"],
+        "correctAnswers": ["<script>"],
+        "difficulty": 6
+    },
+    {
+        "quizName": "General Quiz",
+        "question": "_________ keyword is used to declare variables in javascript.",
+        "answerOptions": ["var", "let", "Only A", "Only B"],
+        "correctAnswers": ["var", "let"],
+        "difficulty": 7
+    },
+    {
+        "quizName": "General Quiz",
+        "question": "Which of the following JavaScript cannot do?",
+        "answerOptions": ["JavaScript can react to events", "JavaScript can manipulate HTML elements","JavaScript can be used to validate data","Javascript can give styles to the page"],
+        "correctAnswers": ["JavaScript can react to events", "JavaScript can manipulate HTML elements","JavaScript can be used to validate data"],
+        "difficulty": 8
+    },
+    {
+        "quizName": "General Quiz",
+        "question": "Which of the following is NOT a Style?",
+        "answerOptions": ["Linked", "Embedded", "Inline", "Orthogonal"],
+        "correctAnswers": ["Orthogonal"],
+        "difficulty": 9
+    },
+    {
+        "quizName": "General Quiz",
+        "question": "The elements <DIV> and <SPAN> have the following characteristics",
+        "answerOptions": ["Element <DIV> inherits properties defined for <SPAN> in a stylesheet",
+                        "Elements <SPAN> and <DIV> define content to be inline or block-level",
+                        "<DIV> and <SPAN> are used as alternatives for the element <P>",
+                        "<DIV> is used inside element <P>."],
+        "correctAnswers": ["Elements <SPAN> and <DIV> define content to be inline or block-level"],
+        "difficulty": 10
     }
 
 ]
+

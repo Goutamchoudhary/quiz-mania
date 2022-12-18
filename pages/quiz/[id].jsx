@@ -10,22 +10,20 @@ const Quiz = ({quiz}) => {
 
 
     return (
-        <>
-            <div className={styles.quiz-container}>
-                {isQuizStarted ? (
-                    <QuizScreen quiz={quiz} retry={() => setIsQuizStarted(false)}/>
-                ) : (
-                    <JoinScreen quiz={quiz} start={() => setIsQuizStarted(true)}/>
-                )}
-            </div>
-    
-        </>
+        <div className={styles.container}>
+            {isQuizStarted ? (
+                <QuizScreen quiz={quiz} retry={() => setIsQuizStarted(false)}/>
+            ) : (
+                <JoinScreen quiz={quiz} start={() => setIsQuizStarted(true)}/>
+            )}
+        </div>
+
     )
 }
 
 export const getServerSideProps = async ({params}) => {
     
-    const res = await axios.get(`${process.env.SERVER}/api/quiz/${params.id}`);
+    const res = await axios.get(`${process.env.SERVER}/api/QuizApi/${params.id}`);
 
     return {
         props:{

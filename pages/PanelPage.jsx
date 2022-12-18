@@ -26,16 +26,16 @@ const PanelPage = ({quizList}) => {
                 )}
 
                 <div className={styles.grid}>
-                    {/* {quizList.map((quiz) => (
+                    {quizList.map((quiz) => (
                         <QuizCard key={quiz._id} quiz={quiz}/>
-                    ))} */}
+                    ))}
 
+                    {/* <QuizCard/>
                     <QuizCard/>
                     <QuizCard/>
                     <QuizCard/>
                     <QuizCard/>
-                    <QuizCard/>
-                    <QuizCard/>
+                    <QuizCard/> */}
 
                 </div>
                 

@@ -28,11 +28,11 @@ const AddQuiz = ({setClose}) => {
         try{
             const answerOptions = [option1, option2, option3, option4];
             const newQuestion = {
-                question, answerOptions, difficulty, correctAnswers:checkedAnswers,
+                quizName:title, question, answerOptions, correctAnswers:checkedAnswers, difficulty
             };
 
             console.log(newQuestion);
-            await axios.post("/api/QuestionsApi", newQuestion);
+            await axios.post(`/api/QuestionsApi`, newQuestion);
             setQuestionCount(prevQuestionCount => prevQuestionCount + 1);
         }catch(err){
             console.log(err);
@@ -44,7 +44,7 @@ const AddQuiz = ({setClose}) => {
         try{
             const newQuiz = {title};
 
-            await axios.post("/api/QuizApi", newQuiz);
+            await axios.post(`/api/QuizApi`, newQuiz);
             setClose(true);
         }catch(err){
             console.log(err);
@@ -110,16 +110,16 @@ const AddQuiz = ({setClose}) => {
                         <div className={styles.correctAnswersBlock}>
                             <p>Select Correct Answers: </p>
                             <div className={styles.answersTag}>
-                                <input type="checkbox" id="option" value={1}
+                                <input type="checkbox" id="option" value={option1}
                                 name="option1" onChange={(e) => handleCheckedAnswers(e)}/>
                                 <label > 1 </label><br/>
-                                <input type="checkbox" id="option" value={2}
+                                <input type="checkbox" id="option" value={option2}
                                 name="option2" onChange={(e) => handleCheckedAnswers(e)}/>
                                 <label > 2 </label><br/>
-                                <input type="checkbox" id="option" value={3}
+                                <input type="checkbox" id="option" value={option3}
                                 name="option3" onChange={(e) => handleCheckedAnswers(e)}/>
                                 <label > 3 </label><br/>
-                                <input type="checkbox" id="option" value={4}
+                                <input type="checkbox" id="option" value={option4}
                                 name="option4" onChange={(e) => handleCheckedAnswers(e)}/>
                                 <label > 4 </label>
                             </div>

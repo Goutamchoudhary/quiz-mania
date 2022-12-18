@@ -7,7 +7,6 @@ import cookie from 'js-cookie';
 const NavBar = ()=>{
     const router = useRouter();
     const cookieuser = parseCookies();
-    console.log(cookieuser);
     const user =  cookieuser ? cookieuser.userEmail : "";
 
     return(

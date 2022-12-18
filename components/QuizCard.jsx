@@ -2,15 +2,14 @@ import React from 'react';
 import Link from "next/link";
 import styles from '../styles/QuizCard.module.css';
 
-const QuizCard = () => {
-//take quiz as props
+const QuizCard = ({quiz}) => {
 
     return (
-        // <Link href={`/quiz/${quiz._id}`} passHref>
+        <Link href={`/quiz/${quiz._id}`} passHref>
             <div className={styles.card}>
-                <h3>Quiz Title</h3> 
+                <h3>{quiz.title}</h3> 
             </div>
-        // </Link>
+        </Link>
         
     )
 }

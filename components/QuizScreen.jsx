@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/QuizScreen.module.css';
-import QuestionList from '../Util/sampleQuestions.json';
+//import QuestionList from '../Util/sampleQuestions.json';
 import QuizResult from '../components/QuizResult';
 import axios from 'axios';
 
 
-const QuizScreen = ({quiz}) => {
+const QuizScreen = ({quiz, retry}) => {
     const [currentQuestion, setCurrentQuestion] = useState();
     const [currentQuestionNumber, setCurrentQuestionNumber] = useState(1);
     const [currentDifficulty, setCurrentDifficulty] = useState(5);
     const [selectedOptions, setSelectedOptions] = useState([]);
+    const [currentScore, setCurrentScore] = useState(0);
 
-    const isQuestionEnd = (currentDifficulty === 0) ? true : false;
+    const isQuizEnd = (currentDifficulty === 0 || currentQuestionNumber == 11) ? true : false;
 
     const handleCheckedOption = (answer) =>{
         if(selectedOptions.includes(answer)){
@@ -22,8 +23,30 @@ const QuizScreen = ({quiz}) => {
         }
     }
 
-    const handleSubmitQuestion = ()=> {
+    const handleSubmitQuestion = async()=> {
+        try{ 
+            const res = await axios.put(`/api/QuestionsApi/${"?quiz="+quiz.title}${"&difficulty="+currentDifficulty}`, selectedOptions);
+            console.log(res.data);
 
+            if(res.data.isCorrect){
+                if(currentDifficulty < 10){
+                    setCurrentDifficulty((prev) => prev + 1);
+                }
+                else{
+                    setCurrentDifficulty(1);
+                }
+                
+                setCurrentScore((prev) => prev + 5);
+            }
+            else{
+                setCurrentDifficulty((prev) => prev - 1);
+                setCurrentScore((prev) => prev - 2);
+            }
+            setCurrentQuestionNumber((prev) => prev + 1);
+            setSelectedOptions([]);
+        }catch(err){
+            console.log(err);
+        }   
     }
 
     useEffect(()=> {
@@ -31,7 +54,8 @@ const QuizScreen = ({quiz}) => {
         const getQuestion = async() => {
             
             try{
-                const quesRes = await axios.get(`api/lists/${"?quiz="+quiz.title}${"&difficulty="+currentDifficulty}`);
+                console.log(quiz);
+                const quesRes = await axios.get(`/api/QuestionsApi/${"?quiz="+quiz.title}${"&difficulty="+currentDifficulty}`);
                 console.log(quesRes.data);
                 setCurrentQuestion(quesRes.data);
 
@@ -46,72 +70,71 @@ const QuizScreen = ({quiz}) => {
 
     return (
         <div className={styles.QuizScreen}>
-            {isQuestionEnd ? 
+            {isQuizEnd ? 
             (
-                <QuizResult/>
+                <QuizResult currentScore={currentScore} retry={retry}/>
             ) : (
-                <div className={styles.question-container}>
-                    <div className={styles.question-number-difficulty}>
+                <div className={styles.questionContainer}>
+                    <div className={styles.questionNumberDifficulty}>
                         <h5>Question {currentQuestionNumber} of 10 </h5>
                         <h5>Difficulty : {currentDifficulty} / 10</h5>
                     </div>
-                    <div className={styles.question-title}>{currentQuestion.question}</div>
-                    <div className={styles.mcq-option}
-                        onClick={(e) => handleCheckedOption(currentQuestion.answerOptions[0])}>
+                    <div className={styles.questionTitle}>{currentQuestion?.question}</div>
+                    <div className={styles.mcqOption}>
                         <input type="checkbox" 
-                            name={currentQuestion.answerOptions[0]}
-                            value={currentQuestion.answerOptions[0]}
-                            className={styles.radio-option} 
+                            name={currentQuestion?.answerOptions[0]}
+                            value={currentQuestion?.answerOptions[0]}
+                            className={styles.radioOption} 
+                            onChange={(e) => handleCheckedOption(currentQuestion?.answerOptions[0])}
                             checked={
-                                selectedOptions.includes(currentQuestion.answerOptions[0])
+                                selectedOptions.includes(currentQuestion?.answerOptions[0])
                             }
                         />
-                        <p className={styles.option-text}>{currentQuestion.answerOptions[0]}</p>
+                        <p className={styles.optionText}>{currentQuestion?.answerOptions[0]}</p>
                     </div>
-                    <div className={styles.mcq-option}
-                        onClick={(e) => handleCheckedOption(currentQuestion.answerOptions[1])}>
+                    <div className={styles.mcqOption}>
                         <input type="checkbox" 
-                            name={currentQuestion.answerOptions[1]}
-                            value={currentQuestion.answerOptions[1]}
-                            className={styles.radio-option} 
+                            name={currentQuestion?.answerOptions[1]}
+                            value={currentQuestion?.answerOptions[1]}
+                            className={styles.radioOption} 
+                            onChange={(e) => handleCheckedOption(currentQuestion?.answerOptions[1])}
                             checked={
-                                selectedOptions.includes(currentQuestion.answerOptions[1])
+                                selectedOptions.includes(currentQuestion?.answerOptions[1])
                             }
                         />
-                        <p className={styles.option-text}>{currentQuestion.answerOptions[1]}</p>
+                        <p className={styles.optionText}>{currentQuestion?.answerOptions[1]}</p>
                     </div>
-                    <div className={styles.mcq-option}
-                        onClick={(e) => handleCheckedOption(currentQuestion.answerOptions[2])}>
+                    <div className={styles.mcqOption}>
                         <input type="checkbox" 
-                            name={currentQuestion.answerOptions[2]}
-                            value={currentQuestion.answerOptions[2]}
-                            className={styles.radio-option} 
+                            name={currentQuestion?.answerOptions[2]}
+                            value={currentQuestion?.answerOptions[2]}
+                            className={styles.radioOption} 
+                            onChange={(e) => handleCheckedOption(currentQuestion?.answerOptions[2])}
                             checked={
-                                selectedOptions.includes(currentQuestion.answerOptions[2])
+                                selectedOptions.includes(currentQuestion?.answerOptions[2])
                             }
                         />
-                        <p className={styles.option-text}>{currentQuestion.answerOptions[2]}</p>
+                        <p className={styles.optionText}>{currentQuestion?.answerOptions[2]}</p>
                     </div>
-                    <div className={styles.mcq-option}
-                        onClick={(e) => handleCheckedOption(currentQuestion.answerOptions[3])}>
+                    <div className={styles.mcqOption}>
                         <input type="checkbox" 
-                            name={currentQuestion.answerOptions[3]}
-                            value={currentQuestion.answerOptions[3]}
-                            className={styles.radio-option} 
+                            name={currentQuestion?.answerOptions[3]}
+                            value={currentQuestion?.answerOptions[3]}
+                            className={styles.radioOption} 
+                            onChange={(e) => handleCheckedOption(currentQuestion?.answerOptions[3])}
                             checked={
-                                selectedOptions.includes(currentQuestion.answerOptions[3])
+                                selectedOptions.includes(currentQuestion?.answerOptions[3])
                             }
                         />
-                        <p className={styles.option-text}>{currentQuestion.answerOptions[3]}</p>
+                        <p className={styles.optionText}>{currentQuestion?.answerOptions[3]}</p>
                     </div>
-                    <button className={styles.submit-question}
+                    <button type="submit" className={styles.submitQuestion}
                             onClick={(e) => handleSubmitQuestion()}>Submit</button>
                 </div>
             )
 
             }
 
-            <button type='submit'>Submit</button>
         </div>
     );
 }
