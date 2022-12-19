@@ -14,7 +14,7 @@ const Login = ()=>{
         e.preventDefault();
         
         try{
-            const res = await axios.post(`api/login`, {userEmail, password});
+            const res = await axios.post(`/api/login`, {userEmail, password});
 
             const {accessToken, email, isAdmin, ...info} = res.data;
 
@@ -22,7 +22,7 @@ const Login = ()=>{
             cookie.set('userEmail', email);
             cookie.set('isUserAdmin', isAdmin);
             
-            router.push('/PanelPage');
+            router.push(`/PanelPage`);
 
         }catch(err){
             console.log(err);

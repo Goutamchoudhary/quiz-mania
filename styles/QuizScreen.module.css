@@ -37,3 +37,7 @@
     color: white;
     background-color: #0070f3;
 }
+
+.radioOption{
+    cursor:pointer;
+}

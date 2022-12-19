@@ -17,7 +17,7 @@ const PanelPage = ({quizList}) => {
                 {isUserAdmin === 'true' ? 
                 (
                     <div onClick={() => setClose(false)} className={styles.createNewQuiz}>
-                        <h3>Create a New Quiz</h3>
+                        <p>Create a New Quiz</p>
                     </div>
                 )
                 :(  <div className={styles.headTitle}>

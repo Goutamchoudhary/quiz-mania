@@ -11,7 +11,7 @@ const QuizScreen = ({quiz, retry}) => {
     const [currentDifficulty, setCurrentDifficulty] = useState(5);
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [currentScore, setCurrentScore] = useState(0);
-
+    
     const isQuizEnd = (currentDifficulty === 0 || currentQuestionNumber == 11) ? true : false;
 
     const handleCheckedOption = (answer) =>{

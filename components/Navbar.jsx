@@ -21,7 +21,7 @@ const NavBar = ()=>{
                             cookie.remove('token');
                             cookie.remove('userEmail');
                             cookie.remove('isUserAdmin');
-                            router.push('/Login');
+                            router.push(`${process.env.SERVER}/Login`);
                         }}>Logout</button></li>  
                     </ul>
                     )   
