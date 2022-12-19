@@ -11,7 +11,7 @@ const QuizScreen = ({quiz, retry}) => {
     const [currentDifficulty, setCurrentDifficulty] = useState(5);
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [currentScore, setCurrentScore] = useState(0);
-    
+    const [chartData, setChartData] = useState([]);
     const isQuizEnd = (currentDifficulty === 0 || currentQuestionNumber == 11) ? true : false;
 
     const handleCheckedOption = (answer) =>{
@@ -42,6 +42,12 @@ const QuizScreen = ({quiz, retry}) => {
                 setCurrentDifficulty((prev) => prev - 1);
                 setCurrentScore((prev) => prev - 2);
             }
+            const newLineData = {                              // for creating line chart
+                                    label: currentQuestionNumber,
+                                    currentScore,
+                                    tooltipContent: `<b>x: </b>${currentQuestionNumber}<br><b>y: </b>${currentScore}`
+                                };
+            setChartData((prev) => [...prev, newLineData]);
             setCurrentQuestionNumber((prev) => prev + 1);
             setSelectedOptions([]);
         }catch(err){
@@ -72,7 +78,7 @@ const QuizScreen = ({quiz, retry}) => {
         <div className={styles.QuizScreen}>
             {isQuizEnd ? 
             (
-                <QuizResult currentScore={currentScore} retry={retry}/>
+                <QuizResult chartData={chartData} currentScore={currentScore} retry={retry}/>
             ) : (
                 <div className={styles.questionContainer}>
                     <div className={styles.questionNumberDifficulty}>
