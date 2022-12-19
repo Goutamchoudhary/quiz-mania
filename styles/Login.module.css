@@ -26,6 +26,10 @@
     margin-top: 60px;
 }
 
+.form p{
+    font-size: 13px;
+}
+
 .input{
     margin-bottom: 15px;
     height: 40px;
