@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quiz App
 
-## Getting Started
 
-First, run the development server:
+## Background
+***
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+  This is a Quiz App where Admin can create quizzes and users can participate in the quizzes. It is built using NextJS which is an open-source web development framework built on top of Node.js enabling React based web applications functionalities such as server-side rendering and generating static websites. NextJS is a complete full-stack framework. Redux is used in this application for state management. CSS is used for styling. JSONWEBTOKEN is used for authentication.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Note:** This application is deployed on Vercel Platform which is developed by the team behind Next.js.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Features Implemented
+***
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+* A user can register using Email Ids and password then after signing in, all the quizzes that is available to participate will be shown on the Home Page.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* If the user is signed in as an Admin then all the available quizzes are shown and there is a button which can used to create a new Quiz.
 
-## Learn More
+* If that button is clicked then the admin can submit the details of the Quiz by providing the details of 10 questions and 4 options.
 
-To learn more about Next.js, take a look at the following resources:
+* Options can be of two types:
+   
+   - Multiple choice with a single correct answer (four choices and one correct answer) 
+   - Multiple choice with multiple correct answers (four choices and more than one correct answer) 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Rules for the quiz that I implemented in the backend:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  * Each question should have a difficulty defined between 1–10.  
+  * The quiz starts for everyone at difficulty level 5. 
+  * For every correct answer, the next question should be at the current level + 1 difficulty. (Since we have only 10 questions, some questions will be         repeated, and it's OK.) 
+  * For every incorrect answer, the next question should be at the current level - 1 difficulty -1. (Since we have only 10 questions, some questions will       be repeated, and it's OK.) 
+  
+  
+#### The quiz ends for a user:
 
-## Deploy on Vercel
+  * When the user answers a difficulty 10 question correctly, or 
+  * When the user answers a difficulty 1 question incorrectly, or
+  * When all 10 questions are exhausted. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### As a user, I should be able to.  
+
+  * Visit the unique link for the quiz and answer questions.  
+  * On the UI, I should be able to see the difficulty level along with the question on each step.  
+  * On finally completing the quiz as a user, I should be able to see my final score(+5 for every correct answer and -2 for every wrong answer) and a line     graph of my score against each attempt. Plot this online graph using d3js (So, when I start, my score is 0 and my attempt is 0. If I answer the first       question correctly, my attempt count will be 1 and score will be 5, and so on. 
+  
+ 
+ 
+ ## Demo
+***
+
+### Live Deployed Website : [http://quiz-mania-nine.vercel.app/](http://quiz-mania-nine.vercel.app/)
+
