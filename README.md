@@ -24,7 +24,7 @@
    - Multiple choice with a single correct answer (four choices and one correct answer) 
    - Multiple choice with multiple correct answers (four choices and more than one correct answer) 
 
-  #### Rules for the quiz that I implemented in the backend:
+* #### Rules for the quiz that I implemented in the backend:
 
   * Each question should have a difficulty defined between 1–10.  
   * The quiz starts for everyone at difficulty level 5. 
@@ -32,14 +32,14 @@
   * For every incorrect answer, the next question should be at the current level - 1 difficulty -1. (Since we have only 10 questions, some questions will       be repeated, and it's OK.) 
   
   
-  #### The quiz ends for a user:
+* #### The quiz ends for a user:
 
   * When the user answers a difficulty 10 question correctly, or 
   * When the user answers a difficulty 1 question incorrectly, or
   * When all 10 questions are exhausted. 
 
 
-  #### As a user, I should be able to.  
+* #### As a user, I should be able to.  
 
   * Visit the unique link for the quiz and answer questions.  
   * On the UI, I should be able to see the difficulty level along with the question on each step.  
