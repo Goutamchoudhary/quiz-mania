@@ -46,7 +46,7 @@
   * On finally completing the quiz as a user, I should be able to see my final score(+5 for every correct answer and -2 for every wrong answer) and a line     graph of my score against each attempt. Plot this online graph using d3js (So, when I start, my score is 0 and my attempt is 0. If I answer the first       question correctly, my attempt count will be 1 and score will be 5, and so on. 
   
  
- 
+* #### Tech Stack : JavaScript, NextJS, ReactJS, MongoDB, CSS, REST APIs
  
  ## Demo
 ***
